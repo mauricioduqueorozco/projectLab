@@ -1,7 +1,6 @@
 var child_process = require('child_process');
 
-	// body...
-	function start () {
+
 		console.log('Call child_process')
 		child_process.exec('./makefile.sh', function (err, stdout, stderr){
 	    
@@ -11,5 +10,5 @@ var child_process = require('child_process');
 	    }
 	    console.log(stdout);
 		});
-	}
+	
 

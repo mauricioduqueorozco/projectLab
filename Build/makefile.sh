@@ -17,8 +17,8 @@ cat Blink.ino >> Blink.cpp
 
 
 echo Copy all core code files over:
-CORE='./arduino'
-VARIANT='./mega'
+CORE='./hardware/arduino'
+VARIANT='./hardware/mega'
 cp ${CORE}/* .
 cp ${VARIANT}/pins_arduino.h .
 
