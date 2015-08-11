@@ -1,0 +1,1 @@
+var st = new start()

@@ -8,6 +8,8 @@
 
 ## Complete clean start: rebuild cpp file from ino
 ##./cleanup.sh ## May be if you prefer clean
+
+echo Start Process to Compile 
 echo "#include \"Arduino.h\"" | cat > Blink.cpp
 echo "void setup();" | cat >> Blink.cpp
 echo "void loop();" | cat >> Blink.cpp
