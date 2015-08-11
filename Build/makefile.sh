@@ -7,6 +7,7 @@
 ## The Makefile stands a better chance of working for you.
 
 ## Complete clean start: rebuild cpp file from ino
+##./cleanup.sh ## May be if you prefer clean
 echo "#include \"Arduino.h\"" | cat > Blink.cpp
 echo "void setup();" | cat >> Blink.cpp
 echo "void loop();" | cat >> Blink.cpp
