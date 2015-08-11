@@ -9,11 +9,14 @@
 ## Complete clean start: rebuild cpp file from ino
 ##./cleanup.sh ## May be if you prefer clean
 
+echo Prepare to sketch 
+cp ./Sketch/sketch.ino ./
+
 echo Start Process to Compile 
-echo "#include \"Arduino.h\"" | cat > Blink.cpp
-echo "void setup();" | cat >> Blink.cpp
-echo "void loop();" | cat >> Blink.cpp
-cat Blink.ino >> Blink.cpp
+echo "#include \"Arduino.h\"" | cat > sketch.cpp
+echo "void setup();" | cat >> sketch.cpp
+echo "void loop();" | cat >> sketch.cpp
+cat sketch.ino >> sketch.cpp
 
 
 echo Copy all core code files over:
@@ -38,17 +41,17 @@ for f in *.o
 done
 
 echo Compile our code, link it in to the core library
-avr-gcc -w -Os -Wl,--gc-sections -mmcu=atmega2560 -o Blink.cpp.elf Blink.cpp.o core.a -L. -lm 
+avr-gcc -w -Os -Wl,--gc-sections -mmcu=atmega2560 -o sketch.cpp.elf sketch.cpp.o core.a -L. -lm 
 
-echo "Add in eeprom if needed (not for Blink)"
-avr-objcopy -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0 Blink.cpp.elf Blink.cpp.eep 
+echo "Add in eeprom if needed (not for sketch)"
+avr-objcopy -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0 sketch.cpp.elf sketch.cpp.eep 
 
 echo Convert elf to hex for avrdude
-avr-objcopy -O ihex -R .eeprom Blink.cpp.elf Blink.cpp.hex 
+avr-objcopy -O ihex -R .eeprom sketch.cpp.elf sketch.cpp.hex 
 
 echo Flash it
-#avrdude -qq -p atmega2560 -c arduino -P /dev/ttyACM0 -b 115200 -D -U Blink.cpp.hex
-avrdude -patmega2560 -cstk500v2 -P/dev/ttyACM0 -v -v avrdude.conf -Uflash:w:Blink.cpp.hex:a 
+#avrdude -qq -p atmega2560 -c arduino -P /dev/ttyACM0 -b 115200 -D -U sketch.cpp.hex
+avrdude -patmega2560 -cstk500v2 -P/dev/ttyACM0 -v -v avrdude.conf -Uflash:w:sketch.cpp.hex:a 
 echo Done
 
 

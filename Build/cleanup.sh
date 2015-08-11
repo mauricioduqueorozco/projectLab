@@ -8,4 +8,6 @@ rm -f *.hex
 rm -f *.c
 rm -f *.S
 rm -f *.a
+rm -f *.ino
+
 
