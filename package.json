@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/mauricioduqueorozco/projectLab/issues"
   },
-  "homepage": "https://github.com/mauricioduqueorozco/projectLab"
+  "homepage": "https://github.com/mauricioduqueorozco/projectLab",
+  "devDependencies": {
+    "serialport": "^1.7.4"
+  }
 }
