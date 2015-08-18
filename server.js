@@ -5,10 +5,13 @@ const http = require('http')
 const port = process.env.PORT || 8080
 
 //Callbacks
-const server = http.createServer(function (req, res){
-	res.end('Hola io.js')
-})
+const server = http.createServer(onRequest)
+server.listen(port, onListening)
 
-server.listen(port, function (){
-	console.log('Server listenning on port ' + port)
-})
+function onRequest ( req , res){
+	res.end('Hola io.js \n ')	
+}
+function onListening ( req , res){
+	console.log('Server listening on port ' + port)
+}
+
