@@ -4,9 +4,13 @@ const http = require('http')
 // variable de entorno
 const port = process.env.PORT || 8080
 
-//Callbacks
-const server = http.createServer(onRequest)
-server.listen(port, onListening)
+//Event Emiter
+const server = http.createServer()
+
+server.on('request', onRequest)
+server.on('listening', onListening)
+
+server.listen(port)
 
 function onRequest ( req , res){
 	res.end('Hola io.js \n ')	
