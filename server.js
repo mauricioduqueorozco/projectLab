@@ -15,16 +15,18 @@ server.on('listening', onListening)
 server.listen(port)
 
 function onRequest ( req , res){
-	// Responder el archivo ante la peticion http se hace publica
-	// la carpeta public, este modo es asincrono
-	let fileName = path.join(__dirname, 'public', 'index.html')
-	let file = fs.readFile(fileName, function(err, file){
-		if(err) return res.end(err.message)
-		res.setHeader('Content-Type','text/html')
-		res.end(file)
-	})	
+	//Uso de Pipes y de Streams
+	res.setHeader('Content-Type', 'text/html')
+	let index = path.join(__dirname, 'public', 'index.html')
+	let rs = fs.createReadStream(index)
+	rs.pipe(res)	
+
+	rs.on('error', function(err){
+		res.end(err.message)
+	})
 }
 function onListening ( req , res){
-	console.log('Server listening on port ' + port)
+	//Uso de back tips para hacer un Template de Strings
+	console.log(`Server listening on port ${port}`)
 }
 
