@@ -19,9 +19,8 @@ function onRequest ( req , res){
 	// la carpeta public, este modo es asincrono
 	let fileName = path.join(__dirname, 'public', 'index.html')
 	let file = fs.readFile(fileName, function(err, file){
-		if(err){
-			return res.end(err.message)
-		}
+		if(err) return res.end(err.message)
+		res.setHeader('Content-Type','text/html')
 		res.end(file)
 	})	
 }
