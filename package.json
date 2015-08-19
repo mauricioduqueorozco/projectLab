@@ -28,5 +28,8 @@
   "homepage": "https://github.com/mauricioduqueorozco/projectLab",
   "devDependencies": {
     "serialport": "^1.7.4"
+  },
+  "dependencies": {
+    "st": "^0.5.5"
   }
 }
