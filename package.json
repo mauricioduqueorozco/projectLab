@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/mauricioduqueorozco/projectLab",
   "devDependencies": {
+    "browserify": "^11.0.1",
     "serialport": "^1.7.4"
   },
   "dependencies": {
