@@ -4,7 +4,10 @@
   "description": "This is a remote laboratory prototype, based in arduino hardware, for data adquire signals process, and controlled the shield internet way. This project its a open source.",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run build-js",
+    "build-js": "browserify client/app.js -o public/app.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +34,7 @@
     "serialport": "^1.7.4"
   },
   "dependencies": {
+    "course": "0.0.1",
     "st": "^0.5.5"
   }
 }
