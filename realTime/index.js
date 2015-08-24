@@ -1,8 +1,8 @@
-'use strict'
+/*'use strict'
 
-var socketio = require('socket.io')
+const socketio = require('socket.io')
 
-/*module.exports = function (server){
+module.exports = function (server){
 	var io = socketio(server)
 
 	io.on('connection', onConnection)
@@ -11,3 +11,4 @@ var socketio = require('socket.io')
 		console.log(`User Connected on ${socket.id}`)
 	}
 }*/
+
