@@ -2,12 +2,11 @@
 
 const http = require('http')
 const router = require('./router')
-const realtime = require('./realTime')
-
-const server = http.createServer()
-
-const port = process.env.PORT || 8080
+//const realtime = require('./realTime')
 const io = require('socket.io')
+const server = http.createServer()
+const port = process.env.PORT || 8080
+
 //realtime(server)
 server.on('request', router)
 server.on('listening', onListening)
