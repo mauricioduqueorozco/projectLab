@@ -9,8 +9,8 @@ p       r   r 	 ooooo    jjjj     eeeeeee    ccccc        tt
 
 ```
 
-[![Build Status](https://](https://)
-[![Gitter chat](https://](https://)
+[![Build Status](https://)](https://)
+[![Gitter chat](https://)](https://)
 [![Dependency Status](https://)
 
 For all discussions, designs, and clarifications, we recommend you join our Gitter Chat room: [https://](https://)
@@ -20,8 +20,8 @@ For all discussions, designs, and clarifications, we recommend you join our Gitt
 Version: 0.0.1 - Released September 01, 2015
 
 *****
-Imagien compile [Arduino](http://www.arduino.cc/) sketches without IDE and not programming on C++  
-ProjectLab can to do convert an [Arduino](http://www.arduino.cc/) UNO and MEGA in a LAB, We prentend to you can obtain many variables, 
+Imagien compile [Arduino](http://www.arduino.cc/) sketches without IDE and not programming on C++, only choose the shield you have!! and drag if any you need.  
+ProjectLab can to do convert an [Arduino](http://www.arduino.cc/) UNO and MEGA in a WEB-LAB, We prentend to you can obtain many variables and analized on real time and shared on the web. 
 
 
 *****
@@ -29,7 +29,6 @@ ProjectLab can to do convert an [Arduino](http://www.arduino.cc/) UNO and MEGA i
 LAB, you say?
 ================
 
-This library is admittedly a base level toolkit for building amazing things with real world (including robots). Here are a couple of those amazing things that leverage node-serialport:
 
 *  
 
@@ -60,11 +59,8 @@ npm install
 #### Windows:
 
  * Windows 7 or Windows 8.1 are supported.
- * Install [Visual Studio Express 2013 for Windows Desktop](http://www.microsoft.com/visualstudio/eng/2013-downloads#d-2013-express).
- * If you are hacking on an Arduino, be sure to install [the drivers](http://arduino.cc/en/Guide/windows#toc4).
  * Install [node.js 0.10.x](http://nodejs.org/) matching the bitness (32 or 64) of your operating system.
  * Install [Python 2.7.6](http://www.python.org/download/releases/2.7.6/) matching the bitness of your operating system.  For any questions, please refer to their [FAQ](http://docs.python.org/2/faq/windows.html). Default settings are perfect.
- * Open the 'Visual Studio Command Prompt' and add Python to the path.
 
 #### Mac OS X:
 
@@ -83,9 +79,6 @@ sudo apt-get install nodejs nodejs-legacy
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install nodejs
-
-sudo apt-get install build-essential
-npm install serialport
 ```
 
 #### Raspberry Pi Linux:
@@ -117,20 +110,13 @@ npm install serialport
  * Install using npm, note this will take a while as it is actually compiling code and that ARM processor is getting a workout.
 
 ```bash
-   npm install serialport
+   npm install 
 ```
 
 To Use
 ------
 
 Opening a serial port:
-
-```js
-var SerialPort = require("serialport").SerialPort
-var serialPort = new SerialPort("/dev/tty-usbserial1", {
-  baudrate: 57600
-});
-```
 
 
 open event
@@ -153,34 +139,16 @@ Reference Guide
 
 ## Methods
 
-### SerialPort (path, options, openImmediately, callback)
+### 
 
+
+
+Open issues on GitHub
+---------------------
+If you have [Issues](https://github.com/mauricioduqueorozco/projectLab/issues).
 
 
 # Credit
 
 A special thanks to [CEDIA](http://cedia.org.ec) for helping create and hosting the precompiled binaries for OSX, Linux, & Windows. This makes installing ProjectLab much easier and much simpler for individuals using those platforms. Thank you.
 
-Helper to compile arduino skecthes, without use Arduino IDE
-
-Only Works on Ubuntu and OSX
-
-the Shield Arduino mega (ATMEGA2560)
-
-node index.js  and Works!!
-
-if you use MAC platform install method:
-
-$ brew install avr-libc
-
-On Linux, this should do the trick:
-
-$ sudo apt-get install gcc-avr binutils-avr gdb-avr avr-libc avrdude
-
-Do you need install MongoDB: 
-
-https://www.mongodb.org/downloads
-
-Require:
-
-NodeJS!!!
